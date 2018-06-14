@@ -33,9 +33,10 @@ class UnixSocketServer
       client.puts SystemdService.new(message).to_json unless message.nil?
       LOG.debug("Done.")
     end
-  rescue Errno
+  rescue e : Errno
+    LOG.error(e.message)
   ensure
     client.close
-    LOG.error("Connection closed!")
+    LOG.info("Connection closed")
   end
 end
