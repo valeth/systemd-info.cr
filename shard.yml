@@ -1,0 +1,13 @@
+name: systemd_info
+version: 0.1.0
+
+authors:
+  - Patrick Auernig <patrick.auernig@mykolab.com>
+
+targets:
+  systemd-info:
+    main: src/systemd_info.cr
+
+crystal: 0.24.2
+
+license: MIT
